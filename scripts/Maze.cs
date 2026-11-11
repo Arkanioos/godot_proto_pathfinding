@@ -21,7 +21,7 @@ public partial class Maze : GridMap
 		InitializeData();
 		SubscribeEvents();
 		InitializeMaze();
-		PopulateGridMap(_maze);
+		PopulateGridMap();
 	}
 
 	private void InitializeData()
@@ -66,16 +66,16 @@ public partial class Maze : GridMap
 		GD.Print("Generated maze");
 	}
 
-	private void PopulateGridMap(Tile[,] generatedMaze)
+	private void PopulateGridMap()
 	{
 		GD.Print("Populating grid map");
-		int width = generatedMaze.GetLength(0);
-		int height = generatedMaze.GetLength(1);
+		int width = _maze.GetLength(0);
+		int height = _maze.GetLength(1);
 		for (int i = 0; i < width; i++)
 		{
 			for (int j = 0; j < height; j++)
 			{
-				Tile tile = generatedMaze[i, j];
+				Tile tile = _maze[i, j];
 				Vector3I tilePosition = new(tile.X, 0, tile.Y);
 				SetCellItem(tilePosition, (int)tile.TileType, 0);
 			}
