@@ -10,8 +10,8 @@
 mesh_library = ExtResource("1_gldc4")
 cell_size = Vector3(1, 0.1, 1)
 script = ExtResource("2_0cso3")
-_width = 50
-_height = 50
+_width = 150
+_height = 150
 
 [node name="Camera3D" type="Camera3D" parent="GridMap" unique_id=366694298 node_paths=PackedStringArray("_maze")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
