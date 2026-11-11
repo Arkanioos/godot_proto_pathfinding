@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://sj3gjciis3ou"]
+
+[ext_resource type="MeshLibrary" uid="uid://dy5iung3ifddk" path="res://mesh_library.tres" id="1_gldc4"]
+[ext_resource type="Script" uid="uid://bkixahjuoqi6f" path="res://scripts/Maze.cs" id="2_0cso3"]
+[ext_resource type="Script" uid="uid://5qm8r0gc7k4l" path="res://scripts/CameraPosition.cs" id="3_2klcf"]
+
+[node name="Root" type="Node3D" unique_id=1699079942]
+
+[node name="GridMap" type="GridMap" parent="." unique_id=556037894]
+mesh_library = ExtResource("1_gldc4")
+cell_size = Vector3(1, 0.1, 1)
+script = ExtResource("2_0cso3")
+_width = 50
+_height = 50
+
+[node name="Camera3D" type="Camera3D" parent="GridMap" unique_id=366694298 node_paths=PackedStringArray("_maze")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+fov = 90.0
+script = ExtResource("3_2klcf")
+_maze = NodePath("..")
+
+[node name="Timer" type="Timer" parent="GridMap" unique_id=955656461]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1231313406]
+transform = Transform3D(1, 0, 0, 0, -4.3711385e-08, 0.99999994, 0, -0.99999994, -4.3711385e-08, 0, 20, 0)
